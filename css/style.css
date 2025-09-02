@@ -6125,8 +6125,8 @@ dl.hiw dd .team-2 .title,
 /* Popup overlay */
 /* .calendar-popup-overlay {
   display: none; */
-  /* hidden by default */
-  /* position: fixed;
+/* hidden by default */
+/* position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -6139,15 +6139,15 @@ dl.hiw dd .team-2 .title,
 
 /* Popup box */
 /* .calendar-popup { */
-  /* position: relative;
+/* position: relative;
   background: #fff;
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   max-width: 600px; */
-  /* medium size */
-  /* width: 80%; */
-  /* responsive */
+/* medium size */
+/* width: 80%; */
+/* responsive */
 /* } */
 
 /* Image inside popup */
@@ -6180,8 +6180,8 @@ dl.hiw dd .team-2 .title,
 /* Add zoom effect style */
 /* .calendar-popup img.zoomed {
   transform: scale(1.5); */
-  /* Zoom level */
-  /* transition: transform 0.3s ease;
+/* Zoom level */
+/* transition: transform 0.3s ease;
   cursor: zoom-out;
 } */
 
@@ -6338,3 +6338,101 @@ body {
 }
 
 
+/* Keep row centered */
+.row {
+  justify-content: center;
+  /* margin-left: 0;
+  margin-right: 0; */
+}
+
+/* Posters styling */
+.poster {
+  /* grid-template-columns: repeat(3, 1fr); */
+  /* gap: 10px; space between posters */
+  justify-items: center;/* center posters */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+/* Hover + Tap zoom */
+.poster:hover,
+.poster:active {
+  transform: scale(1.15);
+  z-index: 5;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Extra space after each topic */
+.poster-section {
+  margin-bottom: 80px;
+}
+
+
+
+/* Fullscreen overlay for zoom */
+#zoomModal {
+  display: none;/* hidden by default */  
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Enlarged image */
+#zoomModal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+  animation: zoomIn 0.3s ease;
+}
+
+/* Animation */
+@keyframes zoomIn {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media(max-width:767px){
+  .poster-heading{
+    font-size: 24px;
+    text-align: center;
+  }
+}
+
+@media (min-width:768px) and (max-width:991px){
+  .poster-heading{
+    font-size: 40px;
+    text-align: center;
+  }
+}
+/* @media (min-width: 992px) {
+  .poster-heading {
+    font-size: 36px;
+  }
+} */
+
+/* Add spacing between posters only on mobile & tablet */
+@media (max-width: 991px) {
+  .poster {
+    margin-bottom: 30px; /* vertical space */
+  }
+}
+
+.poster-column{
+  padding-bottom: 30px;
+}
